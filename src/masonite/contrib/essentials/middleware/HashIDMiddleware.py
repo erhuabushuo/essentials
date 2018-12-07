@@ -10,6 +10,7 @@ class HashIDMiddleware:
 
     def before(self):
         self.request.request_variables = hashid(self.request.all(), decode=True)
+        self.request.url_params = hashid(self.request.url_params, decode=True)
 
     def after(self):
         pass

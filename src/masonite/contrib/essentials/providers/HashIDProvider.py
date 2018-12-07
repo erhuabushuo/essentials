@@ -8,9 +8,7 @@ class HashIDProvider(ServiceProvider):
     wsgi=False
 
     def register(self):
-        print('registering')
         pass
     
     def boot(self, view: View):
-        print('is this being added')
         view.share({'hashid': hashid})

@@ -14,6 +14,9 @@ setup(
     install_requires=[
         'masonite>=2.1,<2.2'
     ],
+    extras_require={
+        'hashids': ['hashids>=1.2,<1.3']
+    },
     package_dir={'': 'src'},
     description='Essential Features for Masonite',
     author='Joseph Mancuso',

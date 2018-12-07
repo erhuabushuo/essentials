@@ -7,8 +7,8 @@ ROUTES = [
 
     RouteGroup([
 
-        # /hashid/test?id=l9avmeG&name=1
-        Get().route('/test', 'HashIDController@show').name('show'),
-        
+        # /hashid/test/l9avmeG?id=l9avmeG&name=1
+        Get().route('/test/@id', 'HashIDController@show').name('show'),
+
     ], prefix="/hashid", name="hashid.")
 ]
