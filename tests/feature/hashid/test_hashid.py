@@ -6,6 +6,9 @@ class MockRequest:
         'id': 'l9avmeG',
         'name': 'Joe',
     }
+    url_params = {
+        'id': 'l9avmeG',
+    }
 
     def all(self):
         return self.request_variables
