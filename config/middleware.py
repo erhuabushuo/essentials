@@ -8,6 +8,8 @@ from app.http.middleware.CsrfMiddleware import CsrfMiddleware
 from app.http.middleware.LoadUserMiddleware import LoadUserMiddleware
 from app.http.middleware.VerifyEmailMiddleware import VerifyEmailMiddleware
 
+from src.masonite.contrib.essentials.middleware import HashIDMiddleware
+
 """HTTP Middleware
 HTTP middleware is middleware that will be ran on every request. Middleware
 is only ran when a HTTP call is successful (a 200 response). This list
@@ -19,6 +21,7 @@ HTTP_MIDDLEWARE = [
     CsrfMiddleware,
     ResponseMiddleware,
     MaintenanceModeMiddleware,
+    HashIDMiddleware,
 ]
 
 """Route Middleware
