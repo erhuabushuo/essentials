@@ -14,8 +14,7 @@ def hashid(*values, decode=False, min_length=7):
             new_dict.update({key: value})
         return new_dict
 
-
     if not decode:
         return hash_class.encode(*values)
-    
+
     return Hashids().decode(*values)
