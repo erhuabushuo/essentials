@@ -1,31 +1,26 @@
 language: python
-
 python:
 - '3.4'
 - '3.5'
-
 matrix:
   include:
-    - python: 3.7
-      dist: xenial
-      sudo: true
-    - python: 3.6
-      script: travis_retry coverage run -m pytest && coveralls
-
+  - python: 3.7
+    dist: xenial
+    sudo: true
+  - python: 3.6
+    script: travis_retry coverage run -m pytest && coveralls
 install:
 - pip install masonite_cli
 - pip install -e .
 - pip install -r requirements.txt
-
-script: 
+script:
 - travis_retry coverage run -m pytest
 - flake8 masonite/ --ignore=E501,F401,E128,E402,E731,F821,E712,W503
-
 deploy:
   provider: pypi
   user: josephmancuso
   password:
-    secure: McIrYxinFbhhTQMmWt+IW6nGstz41+j87iUJ4ovVqxpAirsm7gZ75AoUJ1UAoa/y9uWxvR0ZzBjuhnt04mxPr3XZ4X8qCm/boWtHE3WDt4Kd/Xw4hVJ8rMUBTGqWJ1s1MRRXHkUYsACDEqJvJ2mAvp9yLGeXDWlgfQa/7Fd6zQV1V9FaxeyjkLw4efOXXL30pUyaRrJMLzeHhNp2/Kv+4VYGh+7TnbQOJlCV2HNuDdTmetIfT7VJDhw1mpY2Shdo4cIWkJ6ANxG1CIQh/Bm2mKjSRliKviydfizzgJw9EDR0kvogYUZYeFt9DWAJmdcEP+PamkEMW9L6q6O1268BcoID3/Bu02SoMvn1wWZgWL+HoTB1Jr+fc6nAveFRSCio2tRVUaQ+tylwX6la8198JZBBZc+1AYLZQpcaMy2W03y6oYtOb1KZv0IPG49Dxfk/+OnPGb7TEPiummRN1vKSB+wURKDHVhZhGuons/vW3/PrKsDtbyw/I4AVXt+rKZFt30qies0vjvPR55z0g2t/sV+Pei6cBTstBYgcjNqpFIjIOXjJgmm7asfUC5E36+hVb5BxLAvMbBU4s77qpmG6h0XKueoWhmI3gUltDyPNZXFrDVyU/KYRjocWa7bVAr3vryuMc9IModDNvwFq/nnkaYLD3jvxu7DdMjhi90KWit8=
+    secure: b8zaj+TpSQ0C3b1UqqrWBQ0kKGuirPxnJIamOu92AVlIt3B75zS61vQDdMlkeQAffrwbggZYAF3KaZRrG9YHSsV3SpYjIWpij8UU0eihLvbQaR1lUdHWLelzYJ71E69Eu5ix1Eb3XW3vKx9fBjROsoWQttSKOcHTdsjMClc8RF5Fj+RlnHQVewzlIkzgxfYdPnxlNXe3vc4Oqa2dpfg/db32NavnyBnK4xzvDhHCUO0wcXwi4qmP7ONMcde/uFyYxILu6WEY8l4kDQELjjHfogBWgAQBGFe/JpqNuZDHj9xptg8fULqvNG2ubG/dYQbiEZAb5Q72sfw2O1fV+UEI6M2hJjU2877aN8PsFahOiogd0LM1rhl37t6qS+/PFAg4i57DJqlJrGEB5/CFskMO0K31K1SaLEQSrhTv0AQQyAJI7bgzLDKPwpdan1b3Ehmup9b4WEO5weMo1RfEjDqy5YT/NDAPCxpj7WEoKeBqnwFFnLSCe7XdS1I93yK3cUThB2GTna7mIroaR3hd9QnWS0GSWXRMAkG5Hg9seKjJgltkIl6+c4N60jv7LdiKGLc/BI0sajxp7pkFeOzfEZDj1gzjN8KfJM9kgDB1r39cXtHqi1Q4yJfJIygvXQPMk+rSPKDgv+uuZwnyCBKrziJ1/gcgAyIaIBLsfAaVhW/6cVQ=
   on:
     tags: true
     python: 3.6
