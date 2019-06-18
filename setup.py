@@ -10,9 +10,9 @@ setup(
         'masonite.contrib.essentials.middleware',
         'masonite.contrib.essentials.providers',
     ],
-    version='0.0.1',
+    version='0.0.2',
     install_requires=[
-        'masonite>=2.1,<2.2'
+        'masonite>=2.1,<2.3'
     ],
     extras_require={
         'hashids': ['hashids>=1.2,<1.3']
