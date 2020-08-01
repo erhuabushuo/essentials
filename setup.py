@@ -12,7 +12,7 @@ setup(
     ],
     version='0.0.2',
     install_requires=[
-        'masonite>=2.1,<2.3'
+        'masonite>=2.1,<2.4'
     ],
     extras_require={
         'hashids': ['hashids>=1.2,<1.3']
