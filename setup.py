@@ -10,7 +10,7 @@ setup(
         'masonite.contrib.essentials.middleware',
         'masonite.contrib.essentials.providers',
     ],
-    version='0.0.2',
+    version='0.0.4',
     install_requires=[
         'masonite>=2.1'
     ],
