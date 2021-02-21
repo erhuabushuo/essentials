@@ -4,7 +4,7 @@ from hashids import Hashids
 
 
 def hashid(*values, decode=False, min_length=7):
-    hash_class = Hashids(salt=os.environ.get('KEY', ''), min_length=min_length)
+    hash_class = Hashids(salt=os.environ.get('KEY', 'your-secret-key'), min_length=min_length)
     # decode a dictionary
     if type(values[0]) == dict and decode:
         new_dict = {}
