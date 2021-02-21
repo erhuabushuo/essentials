@@ -17,4 +17,4 @@ def hashid(*values, decode=False, min_length=7):
     if not decode:
         return hash_class.encode(*values)
 
-    return Hashids().decode(*values)
+    return hash_class.decode(*values)
