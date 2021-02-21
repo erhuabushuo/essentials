@@ -2,7 +2,7 @@ from hashids import Hashids
 
 
 def hashid(*values, decode=False, min_length=7):
-    hash_class = Hashids(min_length=min_length)
+    hash_class = Hashids(salt=env('KEY', ''), min_length=min_length)
     # decode a dictionary
     if type(values[0]) == dict and decode:
         new_dict = {}
